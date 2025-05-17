@@ -25,7 +25,7 @@ namespace Shadow
 		inline virtual const std::string& getPath() const override { return m_path; }
 
 		inline const VulkanImage& getImage() const { return m_image; }
-		inline const VKSampler getSampler() const { return m_sampler; }
+		inline const VkSampler getSampler() const { return m_sampler; }
 
 		virtual bool operator==(const Texture2D& other) const override
 		{
@@ -35,7 +35,7 @@ namespace Shadow
 		void createSampler(const Sampler& sampler);
 	private:
 		VulkanImage m_image;
-		VKSampler m_sampler;
+		VkSampler m_sampler;
 		VkFormat m_format;
 		VkImageUsageFlags m_imageUsage;
 

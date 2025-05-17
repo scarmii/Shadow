@@ -193,7 +193,7 @@ namespace Shadow
 		createInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO;
 		createInfo.attachmentCount = 1;
 		createInfo.pAttachments = &colorAttachment;
-		createInfo.count = 1;
+		createInfo.subpassCount = 1;
 		createInfo.pSubpasses = &subpass;
 		createInfo.dependencyCount = 2;
 		createInfo.pDependencies = &dependencies[0];
