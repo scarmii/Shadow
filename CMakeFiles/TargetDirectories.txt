@@ -1,0 +1,7 @@
+C:/dev/Shadow/CMakeFiles/ALL_BUILD.dir
+C:/dev/Shadow/CMakeFiles/ZERO_CHECK.dir
+C:/dev/Shadow/Shadow/CMakeFiles/Shadow.dir
+C:/dev/Shadow/Sandbox/CMakeFiles/Sandbox.dir
+C:/dev/Shadow/Shadow/vendor/GLFW/CMakeFiles/GLFW.dir
+C:/dev/Shadow/Shadow/vendor/SPIRV-Cross/CMakeFiles/SpirvCross.dir
+C:/dev/Shadow/Shadow/vendor/imgui/CMakeFiles/ImGui.dir

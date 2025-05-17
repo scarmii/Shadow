@@ -1,0 +1,9 @@
+[submodule "Shadow/vendor/tinyusdz"]
+	path = Shadow/vendor/tinyusdz
+	url = https://github.com/lighttransport/tinyusdz
+[submodule "Shadow/vendor/assimp"]
+	path = Shadow/vendor/assimp
+	url = https://github.com/assimp/assimp
+[submodule "Shadow/vendor/Vulkan-ValidationLayers"]
+	path = Shadow/vendor/Vulkan-ValidationLayers
+	url = https://github.com/KhronosGroup/Vulkan-ValidationLayers

@@ -1,0 +1,11 @@
+C:\dev\Shadow\Shadow\vendor\SPIRV-Cross\spirv_cfg.cpp;C:\dev\Shadow\Shadow\vendor\SPIRV-Cross\SpirvCross.dir\Release\spirv_cfg.obj
+C:\dev\Shadow\Shadow\vendor\SPIRV-Cross\spirv_cpp.cpp;C:\dev\Shadow\Shadow\vendor\SPIRV-Cross\SpirvCross.dir\Release\spirv_cpp.obj
+C:\dev\Shadow\Shadow\vendor\SPIRV-Cross\spirv_cross.cpp;C:\dev\Shadow\Shadow\vendor\SPIRV-Cross\SpirvCross.dir\Release\spirv_cross.obj
+C:\dev\Shadow\Shadow\vendor\SPIRV-Cross\spirv_cross_c.cpp;C:\dev\Shadow\Shadow\vendor\SPIRV-Cross\SpirvCross.dir\Release\spirv_cross_c.obj
+C:\dev\Shadow\Shadow\vendor\SPIRV-Cross\spirv_cross_parsed_ir.cpp;C:\dev\Shadow\Shadow\vendor\SPIRV-Cross\SpirvCross.dir\Release\spirv_cross_parsed_ir.obj
+C:\dev\Shadow\Shadow\vendor\SPIRV-Cross\spirv_cross_util.cpp;C:\dev\Shadow\Shadow\vendor\SPIRV-Cross\SpirvCross.dir\Release\spirv_cross_util.obj
+C:\dev\Shadow\Shadow\vendor\SPIRV-Cross\spirv_glsl.cpp;C:\dev\Shadow\Shadow\vendor\SPIRV-Cross\SpirvCross.dir\Release\spirv_glsl.obj
+C:\dev\Shadow\Shadow\vendor\SPIRV-Cross\spirv_hlsl.cpp;C:\dev\Shadow\Shadow\vendor\SPIRV-Cross\SpirvCross.dir\Release\spirv_hlsl.obj
+C:\dev\Shadow\Shadow\vendor\SPIRV-Cross\spirv_msl.cpp;C:\dev\Shadow\Shadow\vendor\SPIRV-Cross\SpirvCross.dir\Release\spirv_msl.obj
+C:\dev\Shadow\Shadow\vendor\SPIRV-Cross\spirv_parser.cpp;C:\dev\Shadow\Shadow\vendor\SPIRV-Cross\SpirvCross.dir\Release\spirv_parser.obj
+C:\dev\Shadow\Shadow\vendor\SPIRV-Cross\spirv_reflect.cpp;C:\dev\Shadow\Shadow\vendor\SPIRV-Cross\SpirvCross.dir\Release\spirv_reflect.obj

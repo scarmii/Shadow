@@ -1,0 +1,76 @@
+cmake_minimum_required(VERSION 3.26)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+file(GLOB SH_SRC ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
+file(GLOB SH_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/src/*.hpp)
+file(GLOB SH_SH_SRC ${CMAKE_CURRENT_SOURCE_DIR}/src/Shadow/*.cpp)
+file(GLOB SH_SH_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/src/Shadow/*.hpp)
+file(GLOB SH_CORE_INCLUDE ${CMAKE_CURRENT_SOURCE_DIR}/src/Shadow/Core/*.hpp)
+file(GLOB SH_CORE_SRC ${CMAKE_CURRENT_SOURCE_DIR}/src/Shadow/Core/*.cpp)
+file(GLOB SH_EVENTS_INCLUDE ${CMAKE_CURRENT_SOURCE_DIR}/src/Shadow/Events/*.hpp)
+file(GLOB SH_EVENTS_SRC ${CMAKE_CURRENT_SOURCE_DIR}/src/Shadow/Events/*.cpp)
+file(GLOB SH_UI_INCLUDE ${CMAKE_CURRENT_SOURCE_DIR}/src/Shadow/ImGui/*.hpp)
+file(GLOB SH_UI_SRC ${CMAKE_CURRENT_SOURCE_DIR}/src/Shadow/ImGui/*.cpp)
+file(GLOB SH_RENDERER_INCLUDE ${CMAKE_CURRENT_SOURCE_DIR}/src/Shadow/Renderer/*.hpp)
+file(GLOB SH_RENDERER_SRC ${CMAKE_CURRENT_SOURCE_DIR}/src/Shadow/Renderer/*.cpp)
+file(GLOB SH_VULKAN_INCLUDE ${CMAKE_CURRENT_SOURCE_DIR}/src/Shadow/Vulkan/*.hpp)
+file(GLOB SH_VULKAN_SRC ${CMAKE_CURRENT_SOURCE_DIR}/src/Shadow/Vulkan/*.cpp)
+file(GLOB SH_WINDOWLAYER_INCLUDE ${CMAKE_CURRENT_SOURCE_DIR}/src/Shadow/WindowLayer/*.hpp)
+file(GLOB SH_WINDOWLAYER_SRC ${CMAKE_CURRENT_SOURCE_DIR}/src/Shadow/WindowLayer/*.cpp)
+file(GLOB SH_DEBUG_INCLUDE ${CMAKE_CURRENT_SOURCE_DIR}/src/Shadow/Debug/*.hpp)
+
+add_library(Shadow STATIC 
+    ${SH_SRC} ${SH_HEADERS} 
+    ${SH_SH_SRC} ${SH_SH_HEADERS} 
+    ${SH_CORE_INCLUDE} ${SH_CORE_SRC}
+    ${SH_EVENTS_INCLUDE} ${SH_EVENTS_SRC}
+    ${SH_UI_INCLUDE} ${SH_UI_SRC}
+    ${SH_RENDERER_INCLUDE} ${SH_RENDERER_SRC}
+    ${SH_VULKAN_INCLUDE} ${SH_VULKAN_SRC}
+    ${SH_WINDOWLAYER_INCLUDE} ${SH_WINDOWLAYER_SRC}
+    ${SH_DEBUG_INCLUDE})
+
+set_target_properties(Shadow PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY bin/Shadow/${OUTPUTCONFIG}
+    LIBRARY_OUTPUT_DIRECTORY lib/Shadow/${OUTPUTCONFIG}
+    ARCHIVE_OUTPUT_DIRECTORY lib/Shadow/${OUTPUTCONFIG})
+
+target_precompile_headers(Shadow PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src/shpch.hpp ${CMAKE_CURRENT_SOURCE_DIR}/src/shpch.cpp)
+
+if(WIN32)
+    set(CMAKE_VS_WINDOWS_TARGET_PLATFORM_VERSION CMAKE_VS_WINDOWS_TARGET_PLATFORM_VERSION_MAXIMUM)
+    add_definitions(-DSH_PLATFORM_WINDOWS)
+    add_custom_command(TARGET Shadow PRE_BUILD COMMAND call ${CMAKE_SOURCE_DIR}/scripts/win-compileShaders.bat)
+elseif(LINUX)
+    add_definitions(-DSH_PLATFORM_LINUX)
+elseif(APPLE)
+    add_definitions(-DSH_PLATFORM_APPLE)
+endif()
+
+if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+    set_property(TARGET Shadow PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreadedDebug")
+    add_definitions(-DSH_DEBUG)
+elseif()
+    set_property(TARGET Shadow PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreaded")
+endif()
+
+if (SH_PROFILE_RENDERER_FUNCTION)
+    add_definitions(-DSH_PROFILE_RENDERER_FUNCTION)
+endif()
+
+if (SH_UI_USE_DYNAMIC_RENDERING)
+    add_definitions(-DSH_UI_USE_DYNAMIC_RENDERING)
+endif()
+
+if (RENDERER2D_INSTANCED)
+    add_definitions(-DRENDERER2D_INSTANCED)
+endif()
+
+if (RENDERER_STATISTICS)
+    add_definitions(-DRENDERER_STATISTICS)
+endif()
+
+if (VULKAN_VALIDATION_LAYERS)
+    add_definitions(-DSH_VULKAN_VALIDATION_LAYERS)
+endif()

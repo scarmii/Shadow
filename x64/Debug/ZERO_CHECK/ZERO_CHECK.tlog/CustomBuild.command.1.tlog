@@ -1,0 +1,10 @@
+^C:\DEV\SHADOW\CMAKEFILES\DEDC87149B88291D29085EC443FD0E06\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/dev/Shadow -BC:/dev/Shadow --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/dev/Shadow/Shadow.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
