@@ -1,0 +1,15 @@
+.vs/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.cmake
+*.vcxproj.user
+*.exe
+*.lib
+*.dll
+*.tlog
+*.log
+CMakeFiles/
+x64/
+*.pdb
+*.obj
