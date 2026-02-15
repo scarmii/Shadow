@@ -12,4 +12,5 @@
 CMakeFiles/
 x64/
 *.pdb
+*.json
 *.obj
