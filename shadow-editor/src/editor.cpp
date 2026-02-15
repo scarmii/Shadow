@@ -8,7 +8,7 @@
 
 #include <algorithm>
 
-//#define SH_EDITOR_2D
+#define SH_EDITOR_2D
 //#define BRUSH_TOOL
 
 namespace Shadow

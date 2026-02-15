@@ -8,7 +8,7 @@
 
 #include <glm/glm.hpp>
 
-//#define SH_EDITOR_2D
+#define SH_EDITOR_2D
 
 namespace Shadow
 {
